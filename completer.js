@@ -1,5 +1,5 @@
 var NLIs = [];
-fetch("http://162.105.88.99:8080/NLI")
+fetch("https://162.105.88.99:8080/NLI")
     .then(function (response) {
         return response.json();
     }).then(function (rawNLIs) {
@@ -82,7 +82,7 @@ fetch("http://162.105.88.99:8080/NLI")
                 });
             });*/
             var thisCompleter = this;
-            fetch("http://162.105.88.99:8080/recommendation?type="+types[i] + "&info=" + info[i],{
+            fetch("https://162.105.88.99:8080/recommendation?type="+types[i] + "&info=" + info[i],{
                 body : JSON.stringify(contextVariables),
                 method : "POST"
             }).then(function (response) {
@@ -150,7 +150,7 @@ fetch("http://162.105.88.99:8080/NLI")
         },
         insertMatch : function (editor,data) {
 
-            fetch("http://162.105.88.99:8080/parse?row=" + editor.selection.getCursor().row + "&column=" + editor.selection.getCursor().column,{
+            fetch("https://162.105.88.99:8080/parse?row=" + editor.selection.getCursor().row + "&column=" + editor.selection.getCursor().column,{
                 body : editor.getValue(),
                 method : "POST"
             }).then(function (response) {
