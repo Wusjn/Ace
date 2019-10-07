@@ -122,8 +122,8 @@ fetch("http://162.105.88.99:8080/NLI")
                 editor.completer.showPopup(editor);
                 editor.completer.cancelContextMenu();
             }else{
-                if (code.indexOf("_ ") != -1) {
-                    code = code.replace(new RegExp("_ ","g"),"_" + variableNameNum + " ");
+                if (code.indexOf("_") != -1) {
+                    code = code.replace(new RegExp("_","g"),"_" + variableNameNum);
                     variableNameNum += 1;   
                 }
                 Object.keys(fillers).forEach(function (_key) {
