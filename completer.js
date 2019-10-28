@@ -1,5 +1,6 @@
 var NLIs = [];
-fetch("http://162.105.88.99:8080/NLI")
+
+fetch("http://62.234.94.93:8080/NLI")
     .then(function (response) {
         return response.json();
     }).then(function (rawNLIs) {
@@ -38,7 +39,11 @@ fetch("http://162.105.88.99:8080/NLI")
     });
     
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
+    editor.setValue("\nclass Main{\n    public void main(String[] args){\n        //start NLI2Code by ctrl+x/command+x\n        \n    }\n}")
+    editor.clearSelection()
+    editor.moveCursorTo(4,8)
+    editor.focus()
+    editor.setTheme("ace/theme/xcode");
     editor.session.setMode("ace/mode/java");
 
 
